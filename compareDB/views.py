@@ -41,7 +41,7 @@ class CreateDatabaseConfig(APIView):
                                              database_config=connector_string,
                                              database_type=request['dbType'],
                                              database_desctiption=request['description'])
-            # print(engine.table_names())
+
             print(engine.connect())
             print(engine.table_names())
 

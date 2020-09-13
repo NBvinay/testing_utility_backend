@@ -1,6 +1,6 @@
-
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from compareDB import views
 
 urlpatterns = [
@@ -14,4 +14,5 @@ urlpatterns = [
     path('compareFiles/', views.CompareTwoFiles.as_view()),
     # path('sqlExecute/', views.SQLExecutor.as_view()),
     path('compareTwoData', views.CompareTwoData.as_view()),
+    url(r'^ht/', include('health_check.urls')),
 ]

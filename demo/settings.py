@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +40,16 @@ INSTALLED_APPS = [
     'compareDB',
     'corsheaders',
     'rest_framework',
+
+    'health_check',                             # required
+    'health_check.db',                          # stock Django health checkers
+    'health_check.cache',
+    'health_check.storage',
+    # 'health_check.contrib.celery',              # requires celery
+    'health_check.contrib.psutil',              # disk and memory utilization; requires psutil
+    # 'health_check.contrib.s3boto_storage',      # requires boto and S3BotoStorage backend
+    # 'health_check.contrib.rabbitmq',            # requires RabbitMQ broker
+    # 'health_check.contrib.redis',               # required Redis broker
 ]
 
 MIDDLEWARE = [
